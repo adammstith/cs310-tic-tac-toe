@@ -75,8 +75,18 @@ public class TicTacToeModel {
 
         /* Initialize board by filling every square with empty marks */
         
-        // INSERT YOUR CODE HERE
-        
+        // Insert code here
+
+        for (int row = 0; row < width; row++) {
+            
+            for (int col = 0; col < width; col++) {
+                 
+                board[row][col] = EMPTY;
+
+            }
+
+        }
+
     }
 	
     public boolean makeMark(int row, int col) {
@@ -88,18 +98,30 @@ public class TicTacToeModel {
            other player before returning TRUE.  Otherwise, return FALSE. */
         
         // INSERT YOUR CODE HERE
-        
-        return false; // remove this line later!
+
+        if (isValidSquare(row, col) == true && isSquareMarked(row, col) == false) {
+
+            board[row][col] = X;
+
+            xTurn = false;
+
+            return True;
+
+        }
+        else return false;
         
     }
 	
     private boolean isValidSquare(int row, int col) {
         
         /* Return TRUE if the specified location is within the bounds of the board */
-        
-        // INSERT YOUR CODE HERE
 
-        return false; // remove this line later!
+        if (row >= 0 && row <= width && col >= 0 && col <= width) {
+            
+            return true;
+
+        }
+        else return false; 
         
     }
 	
@@ -109,7 +131,12 @@ public class TicTacToeModel {
         
         // INSERT YOUR CODE HERE
 
-        return false; // remove this line later!
+        if (board[row][col] != EMPTY) {
+
+            return true;
+
+        }
+        else return false;
             
     }
 	
@@ -119,7 +146,7 @@ public class TicTacToeModel {
         
         // INSERT YOUR CODE HERE
 
-        return null; // remove this line later!
+        return board[row][col].toString();
             
     }
 	
@@ -142,6 +169,7 @@ public class TicTacToeModel {
         
         // INSERT YOUR CODE HERE
 
+        
         return false; // remove this line later!
 
     }
@@ -187,7 +215,9 @@ public class TicTacToeModel {
         
         /* Output the board contents as a string (see examples) */
         
-        // INSERT YOUR CODE HERE
+        // insert code here
+
+        output.append(board);
         
         return output.toString();
         
