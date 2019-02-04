@@ -1,13 +1,15 @@
 package edu.jsu.mcis;
 
+import java.awt.event.ActionListener;
+
 import edu.jsu.mcis.TicTacToeModel.Mark;
 import edu.jsu.mcis.TicTacToeModel.Result;
 
-public class TicTacToeController {
+public class TicTacToeController implements ActionListener {
 
     private final TicTacToeModel model;
     private final TicTacToeView view;
-    
+    private final TicTacToeController controller;
     /* CONSTRUCTOR */
 
     public TicTacToeController(int width) {
@@ -15,37 +17,23 @@ public class TicTacToeController {
         /* Initialize model, view, and width */
 
         model = new TicTacToeModel(width);
-        view = new TicTacToeView();
+        view = new TicTacToeView(controller,width);
         
     }
 
-    public void start() {
     
-        /* MAIN LOOP (repeats until game is over) */
 
-        /* Display the board using the View's "showBoard()", then use
-           "getNextMove()" to get the next move from the player.  Enter
-           the move (using the Model's "makeMark()", or display an error
-           using the View's "showInputError()" if the move is invalid. */
-
-        while (model.getResult().equals(Result.NONE)) {
-
-            view.showBoard(model.toString());
-
-           TicTacToeMove move = view.getNextMove(model.isXTurn());
-
-        if (model.makeMark(move.getRow(),move.getCol()) == true) {
-                
-        }
-        else view.showInputError();
+    public String getMarkAsString(int row, int col) {        
+        return (model.getMark(row, col).toString());        
     }
-            /* After the game is over, show the final board and the winner */
+    
+    public TicTacToeView getView() {        
+        return view;        
+    }
 
-            view.showBoard(model.toString());
-
-            view.showResult(model.getResult().toString());
-        
-
+    @Override
+    public void actionPerformed(ActionEvent event) {
+        // INSERT YOUR CODE HERE
     }
 
 }
