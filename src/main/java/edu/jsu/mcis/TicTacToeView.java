@@ -22,11 +22,11 @@ public class TicTacToeView {
            Return as a TicTacToeMove object. */
         if (isXTurn == true) {
             
-            System.out.println("Player 1 turn (X)!");
+            System.out.println("Player 1 (X) Move:");
         }
-        else System.out.println("Player 2 turn (O)!");
+        else System.out.println("Player 2 (O) Move:");
         
-        System.out.print("Enter the row and column numbers, seperated by a space: ");
+        System.out.print("Enter the row and column numbers, separated by a space: ");
         
         int row = keyboard.nextInt();
         int col = keyboard.nextInt();
