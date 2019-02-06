@@ -74,8 +74,6 @@ public class TicTacToeModel {
         board = new Mark[width][width];
 
         /* Initialize board by filling every square with empty marks */
-        
-        // Insert code here
 
         for (int row = 0; row < width; row++) {
             
@@ -96,8 +94,6 @@ public class TicTacToeModel {
            specified location is valid, make a mark for the current player, then
            toggle "xTurn" from true to false (or vice-versa) to switch to the
            other player before returning TRUE.  Otherwise, return FALSE. */
-        
-        // INSERT YOUR CODE HERE
 
         if (isValidSquare(row, col) == true && isSquareMarked(row, col) == false) {
 
@@ -138,8 +134,6 @@ public class TicTacToeModel {
     private boolean isSquareMarked(int row, int col) {
         
         /* Return TRUE if the square at specified location is marked */
-        
-        // INSERT YOUR CODE HERE
 
         if (board[row][col] != Mark.EMPTY) {
 
@@ -153,8 +147,6 @@ public class TicTacToeModel {
     public Mark getMark(int row, int col) {
         
         /* Return the mark from the square at the specified location */
-        
-        // INSERT YOUR CODE HERE
 
         return board[row][col];
             
