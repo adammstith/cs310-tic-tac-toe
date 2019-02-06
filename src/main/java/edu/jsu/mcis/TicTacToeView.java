@@ -1,10 +1,12 @@
 package edu.jsu.mcis;
 
 import java.awt.*;
+import java.awt.event.ActionListener;
+
 import javax.swing.*;
 
 public class TicTacToeView extends JPanel {
-    
+
     private final TicTacToeController controller;
 
     private final JButton[][] board;
@@ -17,16 +19,16 @@ public class TicTacToeView extends JPanel {
 
         this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
         board = new JButton[width][width];
-        squaresPanel = new JPanel(new GridLayout(width,width));
+        squaresPanel = new JPanel(new GridLayout(width, width));
         resultLabel = new JLabel();
         resultLabel.setName("ResultLabel");
-        
+
         for (int row = 0; row < width; row++) {
-            
+
             for (int col = 0; col < width; col++) {
-                
-                board[row][col] = new JButton(); 
-                board[row][col].addActionListener(controller);
+
+                board[row][col] = new JButton();
+                board[row][col].addActionListener((ActionListener) controller);
                 board[row][col].setName("Square" + row + col);
                 board[row][col].setPreferredSize(new Dimension(64,64));
                 squaresPanel.add(board[row][col]);
