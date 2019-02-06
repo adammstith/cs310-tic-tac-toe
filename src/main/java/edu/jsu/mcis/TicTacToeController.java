@@ -4,8 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-import edu.jsu.mcis.TicTacToeModel.Mark;
-import edu.jsu.mcis.TicTacToeModel.Result;
+//import edu.jsu.mcis.TicTacToeModel.Mark;
+//import edu.jsu.mcis.TicTacToeModel.Result;
 
 public class TicTacToeController implements ActionListener {
 
