@@ -7,15 +7,13 @@ import javax.swing.*;
 
 public class TicTacToeView extends JPanel {
 
-    private final TicTacToeController controller;
-
     private final JButton[][] board;
     private final JPanel squaresPanel;
     private final JLabel resultLabel;
 
     public TicTacToeView(TicTacToeController controller, int width) {
 
-        this.controller = controller;
+        
 
         this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
         board = new JButton[width][width];
@@ -56,7 +54,15 @@ public class TicTacToeView extends JPanel {
 
         /* Disable buttons (to disallow input after game is over) */
     
-        // INSERT YOUR CODE HERE
+        for (int row = 0; row < getWidth(); row++) {
+
+            for (int col = 0; col < getWidth(); col++) {
+
+            board[row][col].setEnabled(false);
+
+            }    
+            
+        } 
             
     }
         

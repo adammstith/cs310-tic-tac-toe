@@ -158,13 +158,13 @@ public class TicTacToeModel {
            TIE, or if the game is not over.  Return the corresponding Result
            value */
         
-        if(isMarkWin(Mark.X) == true) {
+        if(isMarkWin(Mark.X)) {
            
             return Result.X;
         
         } 
 
-        else if(isMarkWin(Mark.O) == true) {
+        else if(isMarkWin(Mark.O)) {
             
             return Result.O;
        

@@ -3,7 +3,6 @@ package edu.jsu.mcis;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.time.chrono.ThaiBuddhistChronology;
 
 import edu.jsu.mcis.TicTacToeModel.Mark;
 import edu.jsu.mcis.TicTacToeModel.Result;
@@ -12,7 +11,9 @@ public class TicTacToeController implements ActionListener {
 
     private final TicTacToeModel model;
     private final TicTacToeView view;
-    
+    private int turn = 0;
+    private int printXorO = 0;
+
     /* CONSTRUCTOR */
 
     public TicTacToeController(int width) {
@@ -35,9 +36,27 @@ public class TicTacToeController implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(ActionEvent event) {
+    public void actionPerformed(ActionEvent e) {
+        JButton button = (JButton)(e.getSource());
+        int row = (int) (button.getName().charAt(6)) - 48;
+        int col = (int) (button.getName().charAt(7)) - 48;
+            
         
-        this.actionPerformed(event);
+
+        if (!model.isGameover()) {
+            model.makeMark(row,col);
+            button.setText(model.getMark(row,col).toString());
+        
+        if (model.getResult().toString() == "X" || model.getResult().toString() == "O") {
+            view.showResult(model.getResult().toString().toUpperCase());
+        
+        }
+        if (model.getResult().toString() == "TIE") {
+            view.showResult(model.getResult().toString().toUpperCase());
+
+        }
+        }
+        
     }
 
 }
