@@ -46,7 +46,7 @@ public class TicTacToeView extends JPanel {
 
         /* Refresh the GUI with updated data from the Model (via the Controller) */
 
-        // INSERT YOUR CODE HERE
+        // Did not use. I did not need it
 
     }
     
